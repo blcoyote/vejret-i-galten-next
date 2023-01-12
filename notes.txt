@@ -1,3 +1,3 @@
-use svr https://swr.vercel.app/docs/getting-started
+use swr https://swr.vercel.app/docs/getting-started
 use firebase
 use graphs
