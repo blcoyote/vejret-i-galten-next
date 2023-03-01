@@ -2,10 +2,11 @@
 import { getDatabase, query, ref, orderByChild, limitToFirst, limitToLast, onValue, child } from 'firebase/database';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import WeatherObservation from './../../../../models/WeatherObservation';
+import { database, auth } from './../../../../utils/db';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<WeatherObservation | { error: string }>) {
   const { id } = req.query;
-  const weather = query(ref(getDatabase(), `weather`), orderByChild('dateepoch'), limitToLast(1));
+  const weather = query(ref(database, `weather`), orderByChild('dateepoch'), limitToLast(1));
   onValue(weather, (snapshot) => {
     if (snapshot.exists()) {
       const observation = Object.values(snapshot.val())[0] as WeatherObservation;
