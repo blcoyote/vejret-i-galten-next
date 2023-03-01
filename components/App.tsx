@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGetAppConfigQuery } from '../../services/appConfiguration';
+import { useGetAppConfigQuery } from '../services/appConfiguration';
 
 export const App = () => {
   const { isLoading, data, refetch, error, isError } = useGetAppConfigQuery({});
@@ -9,5 +9,7 @@ export const App = () => {
     }
   }, [data]);
 
-  return <></>;
+  return <div></div>;
 };
+
+export default App;

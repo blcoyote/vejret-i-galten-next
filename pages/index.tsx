@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
-import { store } from './app/store';
+import { store } from '../store/store';
 import { Provider } from 'react-redux';
-import { App } from './app/App';
+import { App } from '../components/App';
 
 const inter = Inter({ subsets: ['latin'] });
 
