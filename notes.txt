@@ -1,5 +1,4 @@
-use swr https://swr.vercel.app/docs/getting-started
-use firebase
+https://capacitorjs.com/ ios+android
 use graphs
 
 https://blog.logrocket.com/nextjs-cloud-firestore-full-stack-app-tutorial/
