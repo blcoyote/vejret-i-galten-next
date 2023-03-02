@@ -1,6 +1,5 @@
 import { database } from '.';
 import { query, ref, orderByChild, limitToLast, get } from 'firebase/database';
-import type { NextApiRequest, NextApiResponse } from 'next';
 import WeatherObservation from './../../models/WeatherObservation';
 
 const dbRef = ref(database, 'weather');
