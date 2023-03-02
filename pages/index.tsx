@@ -1,16 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import styles from '../styles/Home.module.css';
-import { store } from '../store';
-import { Provider } from 'react-redux';
 import { Main } from '../components/MainPage';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <Provider store={store}>
+    <>
       <Main />
       <Head>
         <title>Create Next App</title>
@@ -101,6 +99,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-    </Provider>
+    </>
   );
 }

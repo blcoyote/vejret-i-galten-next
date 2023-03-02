@@ -4,7 +4,7 @@ use graphs https://www.chartjs.org/
 
 https://blog.logrocket.com/nextjs-cloud-firestore-full-stack-app-tutorial/
 
-AUTH0 https://github.com/vercel/next.js/tree/canary/examples/auth0  google signin? 
+AUTH0 https://github.com/vercel/next.js/tree/canary/examples/auth0  google signin? _app.tsx
 
 
-https://reactrouter.com/en/main/start/tutorial
+https://reactrouter.com/en/main/start/tutorial _app.tsx?
