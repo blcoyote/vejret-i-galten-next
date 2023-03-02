@@ -34,10 +34,6 @@ describe('Home', () => {
     ReactDOM.createRoot(container).render(<Provider store={store}><Home /></Provider>);
   });
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
-
-    expect(heading).toBeInTheDocument()
+    expect(await screen.findByText("Get started by editing")).toBeInTheDocument()
   })
 });
