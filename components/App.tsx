@@ -1,13 +1,20 @@
 import React from 'react';
-import { useGetAppConfigQuery } from '../services/appConfiguration';
+import { useGetCurrentWeatherQuery } from '../services/weatherApi';
 
 export const App = () => {
-  const { isLoading, data, refetch, error, isError } = useGetAppConfigQuery({});
+  const {
+    isLoading: isCurrentLoading,
+    data: currentData,
+    refetch: refetchCurrent,
+    error: currentError,
+    isError: isCurrentError,
+  } = useGetCurrentWeatherQuery({});
+
   React.useEffect(() => {
-    if (data) {
-      console.log('reply: ', data?.data);
+    if (currentData) {
+      console.log('current: ', currentData);
     }
-  }, [data]);
+  }, [currentData]);
 
   return <div></div>;
 };

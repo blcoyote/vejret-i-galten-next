@@ -6,6 +6,7 @@ import { store } from '../store/store';
 import { Provider } from 'react-redux';
 import { App } from '../components/App';
 
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
