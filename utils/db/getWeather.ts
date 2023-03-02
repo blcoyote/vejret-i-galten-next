@@ -4,7 +4,7 @@ import WeatherObservation from './../../models/WeatherObservation';
 
 const dbRef = ref(database, 'weather');
 
-export async function getCurrentWeather(): Promise<WeatherObservation | undefined> {
+export async function getCurrentWeather(): Promise<WeatherObservation> {
   const weather = query(dbRef, orderByChild('dateepoch'), limitToLast(1));
   return get(weather)
     .then((snapshot) => {
@@ -12,7 +12,7 @@ export async function getCurrentWeather(): Promise<WeatherObservation | undefine
         const observation = Object.values(snapshot.val())[0] as WeatherObservation;
         return observation;
       }
-      return undefined;
+      throw new Error('No weather observations found', { cause: '404' });
     })
     .catch((error: Error) => {
       throw error;
