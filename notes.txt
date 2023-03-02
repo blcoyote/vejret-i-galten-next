@@ -1,4 +1,5 @@
-https://capacitorjs.com/ ios+android
-use graphs
+https://capacitorjs.com/ ios+android https://devdactic.com/nextjs-and-capacitor
+
+use graphs https://www.chartjs.org/
 
 https://blog.logrocket.com/nextjs-cloud-firestore-full-stack-app-tutorial/

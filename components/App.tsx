@@ -12,7 +12,7 @@ export const App = () => {
 
   React.useEffect(() => {
     if (currentData) {
-      console.log('current: ', currentData);
+      console.log('current: ', { ...currentData });
     }
   }, [currentData]);
 
