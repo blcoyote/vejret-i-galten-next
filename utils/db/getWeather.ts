@@ -6,7 +6,6 @@ const dbRef = ref(database, 'weather');
 
 export async function getCurrentWeather(): Promise<WeatherObservation | undefined> {
   const weather = query(dbRef, orderByChild('dateepoch'), limitToLast(1));
-
   return get(weather)
     .then((snapshot) => {
       if (snapshot.exists()) {
