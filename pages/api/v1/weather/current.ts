@@ -21,7 +21,7 @@ export default async function handler(
         res.status(404).json({ error: 'No weather observations found' });
       }
     })
-    .catch((error) => {
-      res.status(500).send(undefined);
+    .catch((error: Error) => {
+      res.status(500).send({ error: error.message });
     });
 }

@@ -17,7 +17,7 @@ export async function getCurrentWeather(): Promise<WeatherObservation | undefine
         return undefined;
       }
     })
-    .catch((error) => {
-      throw new Error(error);
+    .catch((error: Error) => {
+      throw error;
     });
 }
