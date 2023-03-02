@@ -13,9 +13,8 @@ export async function getCurrentWeather(): Promise<WeatherObservation | undefine
       if (snapshot.exists()) {
         const observation = Object.values(snapshot.val())[0] as WeatherObservation;
         return observation;
-      } else {
-        return undefined;
       }
+      return undefined;
     })
     .catch((error: Error) => {
       throw error;
