@@ -1,6 +1,6 @@
-import { database } from '.';
+import { database } from './dbConnector';
 import { query, ref, orderByChild, limitToLast, get } from 'firebase/database';
-import WeatherObservation from './../../models/WeatherObservation';
+import { WeatherObservation } from './../../models/WeatherObservation';
 
 const dbRef = ref(database, 'weather');
 

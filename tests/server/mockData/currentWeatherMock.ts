@@ -1,0 +1,26 @@
+import { WeatherObservation } from '../../../models';
+
+export const currentWeatherMock: WeatherObservation = {
+  id: 1111111,
+  UV: 3,
+  absbaromin: 30.172,
+  baromin: 30.036,
+  dailyrainin: 0,
+  dateepoch: 1677757846,
+  dateutc: '2023-03-02 11:50:44',
+  dewptf: 37.8,
+  humidity: 74,
+  indoorhumidity: 44,
+  indoortempf: 70,
+  monthlyrainin: 0.008,
+  rainin: 0,
+  realtime: 1,
+  rtfreq: 5,
+  solarradiation: 321.37,
+  tempf: 45.5,
+  weeklyrainin: 0.008,
+  windchillf: 43.5,
+  winddir: 280,
+  windgustmph: 4.5,
+  windspeedmph: 4,
+};

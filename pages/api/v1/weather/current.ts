@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getCurrentWeather } from '../../../../utils/db/getWeather';
-import WeatherObservation from './../../../../models/WeatherObservation';
+import { getCurrentWeather } from '../../../../utils';
+import { WeatherObservation } from './../../../../models';
 
 export default async function handler(
   req: NextApiRequest,

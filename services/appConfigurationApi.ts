@@ -5,6 +5,7 @@ export const appConfigApi = createApi({
   reducerPath: 'appConfigApi',
   baseQuery: fetchBaseQuery({
     baseUrl: '/api',
+    fetchFn: fetch,
     prepareHeaders: (headers) => {
       return headers;
     },

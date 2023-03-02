@@ -4,10 +4,9 @@ import type { NextRequest } from 'next/server';
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  if (request.url.includes('/api')) {
-    if (request.url) console.log('api triggered middleware');
-  }
-
+  // if (request.url.includes('/api')) {
+  //   if (request.url) console.log('api triggered middleware');
+  // }
   //return NextResponse.redirect(new URL('/about-2', request.url));
 }
 

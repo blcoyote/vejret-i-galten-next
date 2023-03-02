@@ -1,7 +1,7 @@
 import React from 'react';
-import { useGetCurrentWeatherQuery } from '../services/weatherApi';
+import { useGetCurrentWeatherQuery } from '../../services/weatherApi';
 
-export const App = () => {
+export const Main = () => {
   const {
     isLoading: isCurrentLoading,
     data: currentData,
@@ -19,4 +19,4 @@ export const App = () => {
   return <div></div>;
 };
 
-export default App;
+export default Main;
