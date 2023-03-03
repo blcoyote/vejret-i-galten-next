@@ -1,17 +1,27 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { getDatabase, query, ref, orderByChild, limitToFirst, limitToLast, onValue, child } from 'firebase/database';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import WeatherObservation from './../../../../models/WeatherObservation';
-import { database, auth } from './../../../../utils/db';
+import { getCurrentWeather } from '../../../../utils';
+import { WeatherObservation } from './../../../../models';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<WeatherObservation | { error: string }>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<WeatherObservation | { error: string } | undefined>
+) {
   const { id } = req.query;
-  const weather = query(ref(database, `weather`), orderByChild('dateepoch'), limitToLast(1));
-  onValue(weather, (snapshot) => {
-    if (snapshot.exists()) {
-      const observation = Object.values(snapshot.val())[0] as WeatherObservation;
-      return res.status(200).json(observation);
-    }
-    return res.status(404).json({ error: 'No weather observations found' });
-  });
+
+  if (req.method !== 'GET') {
+    res.status(405).setHeader('Allow', 'GET').send(undefined);
+  }
+
+  await getCurrentWeather()
+    .then((observation) => {
+      res.status(200).json(observation);
+    })
+    .catch((error: Error) => {
+      const cause = Number(error.cause);
+      if (!isNaN(cause)) {
+        res.status(Number(error.cause)).send({ error: error.message });
+      }
+      res.status(500).send({ error: error.message });
+    });
 }

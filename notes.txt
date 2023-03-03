@@ -1,5 +1,10 @@
-use swr https://swr.vercel.app/docs/getting-started
-use firebase
-use graphs
+https://capacitorjs.com/ ios+android https://devdactic.com/nextjs-and-capacitor
+
+use graphs https://www.chartjs.org/
 
 https://blog.logrocket.com/nextjs-cloud-firestore-full-stack-app-tutorial/
+
+AUTH0 https://github.com/vercel/next.js/tree/canary/examples/auth0  google signin? _app.tsx
+
+
+https://reactrouter.com/en/main/start/tutorial _app.tsx?
