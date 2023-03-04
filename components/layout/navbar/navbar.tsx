@@ -29,7 +29,7 @@ export const Navbar = (props: NavbarProps) => {
   };
 
   return (
-    <AppBar position='static'>
+    <AppBar position='fixed'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <TitleIcon sx={{ display: { xs: 'none', md: 'flex' } }} />
