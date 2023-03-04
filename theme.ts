@@ -1,7 +1,20 @@
 import { createTheme } from '@mui/material';
+import { daDK, enUS } from '@mui/material/locale';
 
-const theme = createTheme({
-  palette: {},
-});
+export const lightTheme = createTheme(
+  {
+    palette: {
+      mode: 'light',
+    },
+  },
+  daDK
+);
 
-export default theme;
+export const darkTheme = createTheme(
+  {
+    palette: { mode: 'dark' },
+  },
+  daDK
+);
+
+

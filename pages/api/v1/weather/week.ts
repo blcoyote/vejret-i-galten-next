@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { WeatherObservation, WeatherPeriod } from './../../../../models';
+import { WeatherObservation } from './../../../../models';
 import { getWeatherDay } from '../../../../utils/db/firestoreIO';
+import { WeatherPeriod } from '../../../../types';
 
 export default async function handler(
   req: NextApiRequest,

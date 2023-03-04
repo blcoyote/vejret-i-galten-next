@@ -1,4 +1,5 @@
-import { WeatherObservation, WeatherPeriod } from '../../models';
+import { WeatherObservation } from '../../models';
+import { WeatherPeriod } from '../../types';
 import firestore from './firestore';
 
 export const getWeatherDay = async (period: WeatherPeriod): Promise<WeatherObservation[]> => {

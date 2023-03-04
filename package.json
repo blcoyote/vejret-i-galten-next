@@ -33,8 +33,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
+    "react-intl": "^6.2.10",
     "react-redux": "^8.0.5",
-    "styled-components": "^5.3.8"
+    "react-router-dom": "^6.8.2",
+    "styled-components": "^5.3.8",
+    "suncalc": "^1.9.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.16",
@@ -54,6 +57,7 @@
     "@types/node": "18.14.4",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "@types/suncalc": "^1.9.0",
     "babel-loader": "^9.1.2",
     "cypress": "^12.7.0",
     "eslint": "8.35.0",
