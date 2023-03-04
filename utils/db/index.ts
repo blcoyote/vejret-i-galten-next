@@ -1,3 +1,2 @@
-export * from './dbConnector';
-export * from './getWeather';
 export * from './firestore';
+export * from './firestoreIO';
