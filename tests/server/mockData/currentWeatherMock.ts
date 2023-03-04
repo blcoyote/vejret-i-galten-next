@@ -1,7 +1,7 @@
 import { WeatherObservation } from '../../../models';
 
 export const currentWeatherMock: WeatherObservation = {
-  id: 1111111,
+  ID: '1111111',
   UV: 3,
   absbaromin: 30.172,
   baromin: 30.036,
