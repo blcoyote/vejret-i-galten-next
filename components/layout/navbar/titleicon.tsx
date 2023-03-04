@@ -19,7 +19,7 @@ export const TitleIcon = (props: TitleIconProps) => {
         paddingRight: '5px',
       }}
     >
-      <CurrentIcon sx={props.sx} />
+      <CurrentIcon {...props} />
     </Box>
   );
 };
