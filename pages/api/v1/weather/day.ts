@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { WeatherObservation } from './../../../../models';
+import { WeatherObservation, WeatherPeriod } from './../../../../models';
 import { getWeatherDay } from '../../../../utils/db/firestoreIO';
 
 export default async function handler(
@@ -12,7 +12,7 @@ export default async function handler(
   }
 
   try {
-    res.status(200).json(await getWeatherDay());
+    res.status(200).json(await getWeatherDay(WeatherPeriod.day));
   } catch (error) {
     const e = error as Error;
     res.status(Number(e.cause)).send({ error: e.message });
