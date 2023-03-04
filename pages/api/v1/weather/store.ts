@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { WeatherObservation } from './../../../../models';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<{ error: string } | number>) {
-  if (req.method !== 'GET') {
-    res.status(405).setHeader('Allow', 'GET').json({ error: 'Method Not Allowed' });
+  if (req.method !== 'POST') {
+    res.status(405).setHeader('Allow', 'POST').json({ error: 'Method Not Allowed' });
   }
   const { PASSWORD } = req.query;
   if (PASSWORD !== process.env.PASSWORD) {
@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   try {
-    const query = req.query as any as WeatherObservation;
+    const query = req.body as any as WeatherObservation;
     query.dateepoch = new Date().getTime() / 1000;
 
     await firestore
