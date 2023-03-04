@@ -25,6 +25,7 @@
     "@mui/material": "^5.11.11",
     "@mui/styled-engine-sc": "^5.11.11",
     "@reduxjs/toolkit": "^1.9.3",
+    "@vercel/analytics": "^0.1.11",
     "dotenv": "^16.0.3",
     "firebase": "^9.17.2",
     "firebase-admin": "^11.5.0",

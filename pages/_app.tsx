@@ -8,12 +8,14 @@ import { ThemeProvider } from '@emotion/react';
 import theme from '../theme';
 import { Provider } from 'react-redux';
 import { store } from '../store';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </Provider>
   );
