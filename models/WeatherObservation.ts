@@ -18,7 +18,7 @@ export interface WeatherObservation {
   monthlyrainin: number;
   solarradiation: number;
   UV: number;
-  dateutc: Date;
+  dateutc: string;
   dateepoch?: number;
   realtime: number;
   rtfreq: number;
