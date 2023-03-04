@@ -1,5 +1,6 @@
 export interface WeatherObservation {
-  id: number;
+  ID: string;
+  PASSWORD?: string;
   indoortempf: number;
   tempf: number;
   dewptf: number;
@@ -17,10 +18,13 @@ export interface WeatherObservation {
   monthlyrainin: number;
   solarradiation: number;
   UV: number;
-  dateutc: string;
-  dateepoch: number;
+  dateutc: Date;
+  dateepoch?: number;
   realtime: number;
   rtfreq: number;
 }
 
-export default WeatherObservation;
+export const filterWeatherObservation = (weather: WeatherObservation) => {
+  if (weather.PASSWORD) delete weather.PASSWORD;
+  return { ...weather } as WeatherObservation;
+};
