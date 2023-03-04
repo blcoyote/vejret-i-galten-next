@@ -8,7 +8,7 @@ export const Main = () => {
     refetch: refetchCurrent,
     error: currentError,
     isError: isCurrentError,
-  } = useGetCurrentWeatherQuery({});
+  } = useGetCurrentWeatherQuery({}, { pollingInterval: 1000 * 60 * 5 });
 
   React.useEffect(() => {
     if (currentData) {
