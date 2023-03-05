@@ -30,7 +30,7 @@ export const Navbar = (props: NavbarProps) => {
 
   return (
     <AppBar position='fixed'>
-      <Container maxWidth='xl'>
+      <Container maxWidth='xl' sx={{ paddingLeft: '0px' }}>
         <Toolbar disableGutters>
           <TitleIcon sx={{ display: { xs: 'none', md: 'flex' } }} />
           <Typography
