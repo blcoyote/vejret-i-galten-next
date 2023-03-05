@@ -10,9 +10,10 @@ const customJestConfig = {
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
-  setupFilesAfterEnv: ["@testing-library/jest-dom", "./jest.setup.ts"],
+  setupFilesAfterEnv: ['@testing-library/jest-dom', './jest.setup.ts'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
+  coveragePathIgnorePatterns: ['tests/server/', 'services/api.ts'],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

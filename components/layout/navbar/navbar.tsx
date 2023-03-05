@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 export const Navbar = (props: NavbarProps) => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<undefined | HTMLElement>(undefined);
   const intl = useIntl();
   const title = intl.formatMessage({ id: 'page.home.navbar.title' });
   const home = intl.formatMessage({ id: 'page.home.navbar.home' });
@@ -25,7 +25,7 @@ export const Navbar = (props: NavbarProps) => {
   };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setAnchorElNav(undefined);
   };
 
   return (
