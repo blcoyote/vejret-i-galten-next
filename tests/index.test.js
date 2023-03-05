@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Home from '../pages/index';
 import { act } from 'react-dom/test-utils';
 import {server} from './server';
-import { Provider } from 'react-redux';
-import { store } from '../store';
+import { Wrapper } from './wrapper';
 import { waitFor } from '@testing-library/dom';
 
 
@@ -31,7 +30,7 @@ describe('Home', () => {
   it('renders a heading', async () => {
 
   await waitFor(() => {
-    ReactDOM.createRoot(container).render(<Provider store={store}><Home /></Provider>);
+    ReactDOM.createRoot(container).render(<Wrapper locale='da'><Home /></Wrapper>);
   });
 
     expect(await screen.findByText("Get started by editing")).toBeInTheDocument()
