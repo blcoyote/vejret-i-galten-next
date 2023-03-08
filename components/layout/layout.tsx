@@ -1,8 +1,17 @@
 import * as React from 'react';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
-import { ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, styled, ThemeProvider } from '@mui/material';
 import { lightTheme, darkTheme } from '../../theme';
+
+const ContentContainer = styled('div')`
+  margin-left: 76px;
+  padding: 0 30px;
+`;
+
+const PageContainer = styled(Container)`
+  margin-top: 1rem;
+`;
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,9 +36,12 @@ export const Layout = (props: LayoutProps) => {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Navbar darkMode action={action} />
-      <main>{children}</main>
-      <Footer />
+      <CssBaseline />
+      <ContentContainer>
+        <Navbar darkMode action={action} />
+        <PageContainer>{children}</PageContainer>
+        <Footer />
+      </ContentContainer>
     </ThemeProvider>
   );
 };
