@@ -1,1 +1,1 @@
-export * from './currentWeatherMock';
+export * from './currentWeather.mock';

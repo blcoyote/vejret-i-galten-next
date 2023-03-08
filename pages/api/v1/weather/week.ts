@@ -1,8 +1,21 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { WeatherObservation } from './../../../../models';
+import { getWeatherDay } from '../../../../utils/db/firestoreIO';
+import { WeatherPeriod } from '../../../../types';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<{ name: string }>) {
-  const { id } = req.query;
-  res.status(200).json({ name: 'John Doe' });
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<WeatherObservation[] | { error: string }>
+) {
+  if (req.method !== 'GET') {
+    res.status(405).setHeader('Allow', 'GET').send({ error: 'Method Not Allowed' });
+  }
+
+  try {
+    res.status(200).json(await getWeatherDay(WeatherPeriod.week));
+  } catch (error) {
+    const e = error as Error;
+    res.status(Number(e.cause)).send({ error: e.message });
+  }
 }
