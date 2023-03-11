@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom/client';
-import Home from '../../pages/home';
+import Home from '../../pages/next';
 import { act } from 'react-dom/test-utils';
 import { server } from '../server';
 import { Wrapper } from '../wrapper';

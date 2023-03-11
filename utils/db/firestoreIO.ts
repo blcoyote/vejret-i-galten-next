@@ -2,7 +2,7 @@ import { WeatherObservation } from '../../models';
 import { WeatherPeriod } from '../../types';
 import firestore from './firestore';
 
-export const getWeatherDay = async (period: WeatherPeriod): Promise<WeatherObservation[]> => {
+export const getWeather = async (period: WeatherPeriod): Promise<WeatherObservation[]> => {
   const docRef = firestore.collection('weather').where('dateepoch', '>', new Date().getTime() / 1000 - period);
 
   return docRef
