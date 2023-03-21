@@ -32,6 +32,7 @@
     "firebase-admin": "^11.5.0",
     "next": "^13.2.4",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-intl": "^6.3.2",
@@ -41,6 +42,7 @@
     "suncalc": "^1.9.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -53,6 +55,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/babel__core": "^7.20.0",
     "@types/babel__generator": "^7.6.4",
+    "@types/chart.js": "^2.9.37",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/linkify-it": "^3.0.2",
     "@types/node": "18.15.5",

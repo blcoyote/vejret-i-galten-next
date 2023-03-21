@@ -117,7 +117,7 @@ export const Navbar = (props: NavbarProps) => {
               </Button>
             ))}
           </Box>
-          <ThemeSwitch defaultChecked={props.darkMode} onClick={props.action} />
+          <ThemeSwitch checked={props.darkMode} onClick={props.action} />
         </Toolbar>
       </Container>
     </AppBar>
