@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { TitleIcon } from './titleicon';
 import Button from './button';
 import { FormattedMessage, useIntl } from 'react-intl';
+import ThemeSwitch from './themeSwitch';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -116,6 +117,7 @@ export const Navbar = (props: NavbarProps) => {
               </Button>
             ))}
           </Box>
+          <ThemeSwitch defaultChecked={props.darkMode} onClick={props.action} />
         </Toolbar>
       </Container>
     </AppBar>

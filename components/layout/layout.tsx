@@ -20,7 +20,8 @@ interface LayoutProps {
 export const Layout = (props: LayoutProps) => {
   const { children } = { ...props };
 
-  const [darkMode, setDarkMode] = React.useState<boolean | undefined>();
+  const [darkMode, setDarkMode] = React.useState<boolean | undefined>(undefined);
+
   React.useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
     setDarkMode(mq.matches);
@@ -28,11 +29,10 @@ export const Layout = (props: LayoutProps) => {
       setDarkMode(evt.matches);
     });
   }, []);
+
   const action = React.useCallback(() => {
     setDarkMode(!darkMode);
   }, [darkMode]);
-
-  if (darkMode === undefined) return <></>;
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
