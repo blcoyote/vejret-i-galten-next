@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, MenuItem, Stack } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { TitleIcon } from './titleicon';
-import Button from './button';
-import { FormattedMessage, useIntl } from 'react-intl';
 import ThemeSwitch from './themeSwitch';
+import { LinkButton } from './linkButton';
+import { LinkMenu } from './linkMenu';
+import { useIntl } from 'react-intl';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -16,10 +17,9 @@ export const Navbar = (props: NavbarProps) => {
   const intl = useIntl();
   const title = intl.formatMessage({ id: 'page.home.navbar.title' });
   const home = intl.formatMessage({ id: 'page.home.navbar.home' });
-  const history = intl.formatMessage({ id: 'page.home.navbar.history' });
+  const daily = intl.formatMessage({ id: 'page.home.navbar.daily' });
+  const weekly = intl.formatMessage({ id: 'page.home.navbar.weekly' });
   const about = intl.formatMessage({ id: 'page.home.navbar.about' });
-
-  const pages = [home, history, about];
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -81,13 +81,18 @@ export const Navbar = (props: NavbarProps) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center' data-testid={'mobile-appbar-menu-item'}>
-                    {page}
-                  </Typography>
-                </MenuItem>
-              ))}
+              <LinkMenu href='/' action={handleCloseNavMenu} key={'home'}>
+                {home}
+              </LinkMenu>
+              <LinkMenu href='/daily' action={handleCloseNavMenu} key={'daily'}>
+                {daily}
+              </LinkMenu>
+              <LinkMenu href='/weekly' action={handleCloseNavMenu} key={'weekly'}>
+                {weekly}
+              </LinkMenu>
+              <LinkMenu href='/about' action={handleCloseNavMenu} key={'about'}>
+                {about}
+              </LinkMenu>
             </Menu>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -111,11 +116,18 @@ export const Navbar = (props: NavbarProps) => {
             {title}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} data-testid={'appbar-button'}>
-                {page}
-              </Button>
-            ))}
+            <LinkButton href='/' action={handleCloseNavMenu} key={'home'}>
+              {home}
+            </LinkButton>
+            <LinkButton href='/daily' action={handleCloseNavMenu} key={'daily'}>
+              {daily}
+            </LinkButton>
+            <LinkButton href='/weekly' action={handleCloseNavMenu} key={'weekly'}>
+              {weekly}
+            </LinkButton>
+            <LinkButton href='/about' action={handleCloseNavMenu} key={'about'}>
+              {about}
+            </LinkButton>
           </Box>
           <ThemeSwitch checked={props.darkMode} onClick={props.action} />
         </Toolbar>

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from '../store';
 import { Analytics } from '@vercel/analytics/react';
 import { Layout } from '../components/layout';
-import React, { useEffect } from 'react';
+import React from 'react';
 import en from '../lang/en.json';
 import da from '../lang/da.json';
 import { useRouter } from 'next/router';
@@ -26,11 +26,23 @@ function getDirection(locale: string) {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [appInitialised, setAppInitialised] = React.useState(false);
   const { locale } = useRouter();
 
   let lang = 'da';
   if (locale) {
     lang = locale;
+  }
+
+  React.useEffect(() => {
+    const localStorageDarkMode = localStorage.getItem('darkMode');
+    if (localStorageDarkMode !== null) {
+      setAppInitialised(true);
+    }
+  }, []);
+
+  if (!appInitialised) {
+    return <></>;
   }
 
   return (

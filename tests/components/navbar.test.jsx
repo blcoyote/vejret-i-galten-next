@@ -38,7 +38,7 @@ describe('Navbar, standard', () => {
     });
     // test fullsize navbar
     const buttons = await screen.findAllByTestId('appbar-button');
-    expect(buttons.length).toBe(3);
+    expect(buttons.length).toBe(4);
     buttons.forEach((button) => {
       expect(button).toBeVisible();
     });
@@ -58,7 +58,6 @@ describe('Navbar, standard', () => {
 
       // resize to mobile size
       render.innerWidth = 400;
-
       const menuButton = await screen.findByTestId('mobile-appbar-menu-button');
 
       act(() => {
@@ -67,7 +66,7 @@ describe('Navbar, standard', () => {
 
       const menuButtons = screen.getAllByTestId('mobile-appbar-menu-item');
       menuButtons.forEach((button) => {
-        expect(button).toHaveTextContent(/Hjem|Historik|Om/i);
+        expect(button).toHaveTextContent(/Hjem|24 timer|7 dage|Om/i);
       });
 
       act(() => {

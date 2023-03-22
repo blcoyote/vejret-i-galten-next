@@ -1,6 +1,7 @@
 {
   "page.home.navbar.title": "Vejret i Galten",
   "page.home.navbar.home": "Hjem",
-  "page.home.navbar.history": "Historik",
+  "page.home.navbar.daily": "24 timer",
+  "page.home.navbar.weekly": "7 dage",
   "page.home.navbar.about": "Om"
 }

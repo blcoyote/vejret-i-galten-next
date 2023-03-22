@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
-import { Container, CssBaseline, styled, ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, Paper, Stack, styled, ThemeProvider } from '@mui/material';
 import { lightTheme, darkTheme } from '../../theme';
 
-const ContentContainer = styled('div')`
-  margin-left: 76px;
-  padding: 0 30px;
+const ContentContainer = styled(Stack)`
+  margin-left: 3rem;
+  margin-right: 3rem;
 `;
 
 const PageContainer = styled(Container)`
-  margin-top: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 `;
-
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,21 +20,13 @@ interface LayoutProps {
 
 export const Layout = (props: LayoutProps) => {
   const { children } = { ...props };
-  const [darkMode, setDarkMode] = React.useState<boolean | undefined>(undefined);
+  const [darkMode, setDarkMode] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const localStoragedarkMode = localStorage.getItem('darkMode');
-
-    if (localStoragedarkMode !== null) {
-      setDarkMode(localStoragedarkMode === 'true');
-    } else {
-      setDarkMode(mq.matches);
+    const localStorageDarkMode = localStorage.getItem('darkMode');
+    if (localStorageDarkMode !== null) {
+      setDarkMode(localStorageDarkMode === 'true');
     }
-
-    mq.addEventListener('change', function (evt) {
-      setDarkMode(evt.matches);
-    });
   }, []);
 
   const action = React.useCallback(() => {
@@ -42,16 +34,14 @@ export const Layout = (props: LayoutProps) => {
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
 
-  if (darkMode === undefined) {
-    // it defaults to lightmode, which is a problem for darkmode users so we save a render cycle (for now)
-    return <></>;
-  }
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <ContentContainer>
+      <ContentContainer direction={'column'}>
         <Navbar darkMode={darkMode} action={action} />
-        <PageContainer>{children}</PageContainer>
+        <Paper>
+          <PageContainer>{children}</PageContainer>
+        </Paper>
         <Footer />
       </ContentContainer>
     </ThemeProvider>

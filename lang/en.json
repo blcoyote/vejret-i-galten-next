@@ -1,6 +1,7 @@
 {
   "page.home.navbar.title": "The weather in Galten",
   "page.home.navbar.home": "Home",
-  "page.home.navbar.history": "History",
+  "page.home.navbar.daily": "24 hours",
+  "page.home.navbar.weekly": "7 days",
   "page.home.navbar.about": "About"
 }
