@@ -41,9 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  if (!appInitialised) {
-    return <></>;
-  }
+
 
   return (
     <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]} defaultLocale={'da'}>
