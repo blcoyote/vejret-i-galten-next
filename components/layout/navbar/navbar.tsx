@@ -93,7 +93,7 @@ export const Navbar = (props: NavbarProps) => {
           </Box>
           <TitleIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
-            variant='h6'
+            variant='h7'
             noWrap
             component='a'
             href=''
