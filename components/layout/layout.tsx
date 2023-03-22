@@ -20,12 +20,14 @@ interface LayoutProps {
 
 export const Layout = (props: LayoutProps) => {
   const { children } = { ...props };
+  const [appInitialised, setAppInitialised] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     const localStorageDarkMode = localStorage.getItem('darkMode');
     if (localStorageDarkMode !== null) {
       setDarkMode(localStorageDarkMode === 'true');
+      setAppInitialised(true);
     }
   }, []);
 
@@ -33,6 +35,10 @@ export const Layout = (props: LayoutProps) => {
     setDarkMode(!darkMode);
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
+
+  if (!appInitialised) {
+    return <></>;
+  }
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>

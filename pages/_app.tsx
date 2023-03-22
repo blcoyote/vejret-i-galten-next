@@ -26,22 +26,12 @@ function getDirection(locale: string) {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [appInitialised, setAppInitialised] = React.useState(false);
   const { locale } = useRouter();
 
   let lang = 'da';
   if (locale) {
     lang = locale;
   }
-
-  React.useEffect(() => {
-    const localStorageDarkMode = localStorage.getItem('darkMode');
-    if (localStorageDarkMode !== null) {
-      setAppInitialised(true);
-    }
-  }, []);
-
-
 
   return (
     <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]} defaultLocale={'da'}>
