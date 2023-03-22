@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, MenuItem } from '@mui/material';
+import { AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, MenuItem, Stack } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { TitleIcon } from './titleicon';
 import Button from './button';
@@ -31,28 +31,27 @@ export const Navbar = (props: NavbarProps) => {
 
   return (
     <AppBar position='fixed'>
-      <Container maxWidth='xl' sx={{ paddingLeft: '0px' }}>
+      <Container maxWidth='xl' sx={{ paddingLeft: 0 }}>
         <Toolbar disableGutters>
-          <TitleIcon sx={{ display: { xs: 'none', md: 'flex' } }} />
-          <Typography
-            variant='h6'
-            noWrap
-            component='a'
-            href='/'
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            {title}
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <TitleIcon />
+            <Typography
+              variant='h6'
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.1rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              {title}
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, paddingRight: '0.5rem' }}>
             <IconButton
               size='large'
               aria-label='menu-appbar'
@@ -91,7 +90,9 @@ export const Navbar = (props: NavbarProps) => {
               ))}
             </Menu>
           </Box>
-          <TitleIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <TitleIcon sx={{ minWidth: '2rem' }} />
+          </Box>
           <Typography
             noWrap
             component='a'
@@ -111,7 +112,7 @@ export const Navbar = (props: NavbarProps) => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ mb: -0.9 }} data-testid={'appbar-button'}>
+              <Button key={page} onClick={handleCloseNavMenu} data-testid={'appbar-button'}>
                 {page}
               </Button>
             ))}

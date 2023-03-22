@@ -38,7 +38,7 @@ const CurrentIcon = (props: TitleIconProps) => {
           flexDirection: 'column',
           justifyContent: 'Center',
           alignItems: 'Center',
-          paddingRight: '10px',
+
         }}
       >
         <CloudIcon fontSize='medium' sx={{ mt: 2, zIndex: 1, ...props.sx }} />
