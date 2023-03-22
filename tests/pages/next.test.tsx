@@ -5,6 +5,7 @@ import { act } from 'react-dom/test-utils';
 import { server } from '../server';
 import { Wrapper } from '../wrapper';
 import { waitFor } from '@testing-library/dom';
+import React from 'react';
 
 let container;
 
