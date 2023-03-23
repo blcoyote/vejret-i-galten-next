@@ -4,6 +4,7 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import { Box } from '@mui/material';
 import SunCalc from 'suncalc';
 import { SvgIconProps } from '@mui/material/SvgIcon';
+import React from 'react';
 
 interface TitleIconProps extends SvgIconProps {}
 
