@@ -5,8 +5,8 @@ import { Container, CssBaseline, Paper, Stack, styled, ThemeProvider } from '@mu
 import { lightTheme, darkTheme } from '../../theme';
 
 const ContentContainer = styled(Stack)`
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 const PageContainer = styled(Container)`
@@ -45,9 +45,9 @@ export const Layout = (props: LayoutProps) => {
       <CssBaseline />
       <ContentContainer direction={'column'}>
         <Navbar darkMode={darkMode} action={action} />
-        <Paper>
-          <PageContainer>{children}</PageContainer>
-        </Paper>
+
+        <PageContainer>{children}</PageContainer>
+
         <Footer />
       </ContentContainer>
     </ThemeProvider>

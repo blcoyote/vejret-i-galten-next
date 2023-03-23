@@ -3,5 +3,6 @@
   "page.home.navbar.home": "Home",
   "page.home.navbar.daily": "24 hours",
   "page.home.navbar.weekly": "7 days",
-  "page.home.navbar.about": "About"
+  "page.home.navbar.about": "About",
+  "page.daily.chart.temperature": "Temperature"
 }

@@ -1,19 +1,23 @@
-import { Card as MuiCard, styled } from "@mui/material";
+import { CardContent, LinearProgress, Card as MUICard, styled } from '@mui/material';
+import { GraphCardHeader } from './header';
 
-export const Card = styled(MuiCard)({
-    backgroundColor: "red",
-    color: "white",
-    padding: "10px",
-    borderRadius: "5px",
-    textAlign: "center",
-    fontSize: "1.5rem",
-    fontWeight: "bold",
-    fontFamily: "monospace",
-    letterSpacing: ".1rem",
-    textTransform: "uppercase",
-    boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)",
-    "&:hover": {
-        backgroundColor: "red",
-        color: "white",
-    },
+export const Card = styled(MUICard)({
+  margin: '1rem',
 });
+
+interface GraphCardProps {
+  title?: string;
+  isLoading?: boolean;
+  children: React.ReactNode;
+}
+
+export const GraphCard = (props: GraphCardProps) => {
+  const { title, isLoading, children } = props;
+  return (
+    <Card>
+      {title && <GraphCardHeader line1={title} />}
+      {isLoading && <LinearProgress />}
+      <CardContent>{children}</CardContent>
+    </Card>
+  );
+};

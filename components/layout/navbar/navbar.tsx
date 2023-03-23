@@ -39,7 +39,9 @@ export const Navbar = (props: NavbarProps) => {
               variant='h6'
               noWrap
               sx={{
+                mt: 0.5,
                 mr: 2,
+                ml: 1,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
                 fontWeight: 700,
@@ -115,7 +117,7 @@ export const Navbar = (props: NavbarProps) => {
           >
             {title}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, mt: 0.5 }}>
             <LinkButton href='/' action={handleCloseNavMenu} key={'home'}>
               {home}
             </LinkButton>

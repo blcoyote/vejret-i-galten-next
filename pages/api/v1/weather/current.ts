@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getWeatherLatest } from '../../../../utils/db/firestoreIO';
-import { WeatherObservation } from './../../../../models';
+import { WeatherRecord } from './../../../../models';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<WeatherObservation | { error: string } | undefined>
+  res: NextApiResponse<WeatherRecord | { error: string } | undefined>
 ) {
   const { id } = req.query;
 

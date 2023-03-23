@@ -3,11 +3,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { WeatherObservation } from './../../../../models';
 import { getWeather } from '../../../../utils/db/firestoreIO';
 import { WeatherPeriod } from '../../../../types';
+import { WeatherRecord } from '../../../../models/WeatherRecord';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<WeatherObservation[] | { error: string }>
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<WeatherRecord[] | { error: string }>) {
   if (req.method !== 'GET') {
     res.status(405).setHeader('Allow', 'GET').send({ error: 'Method Not Allowed' });
   }

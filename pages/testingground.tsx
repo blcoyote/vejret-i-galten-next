@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Main } from '../components/testRtk';
+
 
 export const TestingGround = () => {
-  return <Main />;
+  return <></>;
 };
 
 export default TestingGround;
