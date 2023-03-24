@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,15 +12,30 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-export const options = {
+export const options: ChartOptions = {
   responsive: true,
+  elements: {
+    point: {
+      radius: 1,
+      borderWidth: 0,
+      hoverRadius: 4,
+      hoverBorderWidth: 1,
+    },
+    line: {
+      borderWidth: 2,
+      tension: 0.4,
+    },
+  },
   plugins: {
     legend: {
       position: 'top' as const,
     },
     title: {
       display: true,
-      text: 'Temperatur',
+      text: 'Replace this',
+    },
+    decimation: {
+      enabled: true,
     },
   },
 };
@@ -39,5 +55,10 @@ interface LineChartProps {
 
 export const LineChart = (props: LineChartProps) => {
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-  return <Line {...props} />;
+
+  return (
+    <Box sx={{ position: 'relative', margin: 'auto', width: 'auto' }}>
+      <Line {...props} />
+    </Box>
+  );
 };

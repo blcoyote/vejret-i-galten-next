@@ -1,7 +1,7 @@
 import React from 'react';
 import { WeatherRecord } from '../../../models';
 import { GraphCard } from '../../graphcard';
-import { LineChart, options } from '../chart';
+import { LineChart, options } from '../linechart';
 import { useIntl } from 'react-intl';
 
 interface DailyTemperatureProps {
