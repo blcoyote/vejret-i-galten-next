@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../../pages/bak.index';
+import Home from '../../pages';
 
 describe('<Home />', () => {
   it('renders', () => {

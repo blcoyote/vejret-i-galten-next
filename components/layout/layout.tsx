@@ -36,18 +36,12 @@ export const Layout = (props: LayoutProps) => {
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
 
-  // if (!appInitialised) {
-  //   return <></>;
-  // }
-
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <ContentContainer direction={'column'}>
         <Navbar darkMode={darkMode} action={action} />
-
         <PageContainer>{children}</PageContainer>
-
         <Footer />
       </ContentContainer>
     </ThemeProvider>
