@@ -3,7 +3,7 @@ import { WeatherRecord } from '../../models';
 import { GraphCard } from '../graphcard';
 import { LineChart, options } from './linechart';
 import { useIntl } from 'react-intl';
-import ChartProps from '../../models/chartProps.model';
+import { ChartProps } from '../../models';
 
 export const TemperatureChart = (props: ChartProps) => {
   const { labels, data, isLoading } = props;
