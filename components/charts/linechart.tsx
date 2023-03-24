@@ -1,5 +1,3 @@
-// ts-nocheck
-// disable typecheck since "Line" has a type problem with perfectly valid 'ChartOptions' parameters.
 import { Box } from '@mui/material';
 import {
   Chart as ChartJS,
@@ -12,20 +10,13 @@ import {
   Legend,
   ChartOptions,
   RadialLinearScale,
+  ChartData,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
 interface LineChartProps {
-  options?: ChartOptions;
-  data: {
-    labels: string[] | undefined;
-    datasets: {
-      label: string;
-      data: number[] | undefined;
-      borderColor: string;
-      backgroundColor: string;
-    }[];
-  };
+  options?: ChartOptions<'line'>;
+  data: ChartData<'line'>;
 }
 
 export const LineChart = (props: LineChartProps) => {
@@ -33,7 +24,7 @@ export const LineChart = (props: LineChartProps) => {
 
   return (
     <Box sx={{ position: 'relative', margin: 'auto', width: 'auto', height: { md: '25rem', xs: '15rem' } }}>
-      <Line {...props} data-testid={'linechart'} />{' '}
+      <Line {...props} />
     </Box>
   );
 };

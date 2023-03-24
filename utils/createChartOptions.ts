@@ -1,6 +1,6 @@
 import { ChartOptions } from 'chart.js';
 
-const defaultChartOptions: ChartOptions = {
+const defaultChartOptions: ChartOptions<'line'> = {
   responsive: true,
   maintainAspectRatio: false,
   elements: {
@@ -25,15 +25,16 @@ const defaultChartOptions: ChartOptions = {
   },
 };
 
-export const createChartOptions = (title: string, yUnit: string): ChartOptions => {
-  const tempOptions: ChartOptions = {
+export const createChartOptions = (title: string, yUnit: string): ChartOptions<'line'> => {
+  const tempOptions: ChartOptions<'line'> = {
     ...defaultChartOptions,
     plugins: { title: { display: true, text: title } },
     scales: {
       y: {
         ticks: {
           callback: function (value, index, ticks) {
-            return value.toString() + yUnit;
+            const valueUnit = value.toString() + yUnit;
+            return valueUnit as string;
           },
         },
       },

@@ -4,6 +4,7 @@ import { LineChart } from './linechart';
 import { useIntl } from 'react-intl';
 import { ChartProps } from '../../models';
 import { createChartOptions } from '../../utils/createChartOptions';
+import { ChartData } from 'chart.js';
 
 export const RainChart = (props: ChartProps) => {
   const { labels, data, isLoading } = props;
@@ -15,7 +16,7 @@ export const RainChart = (props: ChartProps) => {
   const rainData = React.useMemo(() => {
     return {
       label: precipUnits,
-      data: data?.filter((x) => x).map((x) => Math.round(x.rainin * 25.4)),
+      data: data?.filter((x) => x).map((x) => Math.round(x.rainin * 25.4)) ?? [],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     };
@@ -24,7 +25,7 @@ export const RainChart = (props: ChartProps) => {
   const dailyRainData = React.useMemo(() => {
     return {
       label: accum,
-      data: data?.filter((x) => x).map((x) => Math.round(x.dailyrainin * 25.4)),
+      data: data?.filter((x) => x).map((x) => Math.round(x.dailyrainin * 25.4)) ?? [],
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     };
@@ -34,7 +35,7 @@ export const RainChart = (props: ChartProps) => {
     return createChartOptions(title, 'mm');
   }, [title]);
 
-  const graphData = { labels, datasets: [rainData, dailyRainData] };
+  const graphData: ChartData<'line'> = { labels, datasets: [rainData, dailyRainData] };
 
   return (
     <GraphCard isLoading={isLoading}>
