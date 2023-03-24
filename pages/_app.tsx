@@ -34,13 +34,18 @@ export default function App({ Component, pageProps }: AppProps) {
     lang = locale;
   }
 
-  function fallbackRender({ error, resetErrorBoundary }) {
+  interface fallbackRenderProps {
+    error: Error;
+    resetErrorBoundary: () => void;
+  }
+
+  function fallbackRender(props: fallbackRenderProps) {
     // Call resetErrorBoundary() to reset the error boundary and retry the render.
 
     return (
       <div role='alert'>
         <p>Something went wrong:</p>
-        <pre style={{ color: 'red' }}>{error.message}</pre>
+        <pre>{props.error.message}</pre>
       </div>
     );
   }
