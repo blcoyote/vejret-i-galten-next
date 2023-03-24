@@ -5,7 +5,6 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Provider } from 'react-redux';
 import { store } from '../store';
-import { Analytics } from '@vercel/analytics/react';
 import { Layout } from '../components/layout';
 import React from 'react';
 import en from '../lang/en.json';
@@ -39,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Component {...pageProps} dir={getDirection(lang)} />
         </Layout>
-        <Analytics />
+
       </Provider>
     </IntlProvider>
   );
