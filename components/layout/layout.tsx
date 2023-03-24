@@ -27,7 +27,10 @@ export const Layout = (props: LayoutProps) => {
     const localStorageDarkMode = localStorage.getItem('darkMode');
     if (localStorageDarkMode !== null) {
       setDarkMode(localStorageDarkMode === 'true');
+    } else {
+      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
+
     setMounted(true);
   }, []);
 
