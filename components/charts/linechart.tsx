@@ -19,7 +19,7 @@ export const options: ChartOptions = {
     point: {
       radius: 1,
       borderWidth: 0,
-      hoverRadius: 4,
+      hoverRadius: 10,
       hoverBorderWidth: 1,
     },
     line: {
