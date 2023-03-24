@@ -39,10 +39,11 @@ export const Layout = (props: LayoutProps) => {
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
 
-  // prevents ssr flash for mismatched dark mode
+  
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
+      {/** visibility hack prevents ssr flash for mismatched dark mode */}
       <ContentContainer direction={'column'} style={{ visibility: !mounted ? 'hidden' : 'visible' }}>
         <Navbar darkMode={darkMode} action={action} />
         <PageContainer>{children}</PageContainer>
