@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
-import { Container, CssBaseline, Paper, Stack, styled, ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, Stack, styled, ThemeProvider } from '@mui/material';
 import { lightTheme, darkTheme } from '../../theme';
 
 const ContentContainer = styled(Stack)`
@@ -20,15 +20,18 @@ interface LayoutProps {
 
 export const Layout = (props: LayoutProps) => {
   const { children } = { ...props };
-  const [appInitialised, setAppInitialised] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState<boolean>(false);
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     const localStorageDarkMode = localStorage.getItem('darkMode');
     if (localStorageDarkMode !== null) {
       setDarkMode(localStorageDarkMode === 'true');
-      setAppInitialised(true);
+    } else {
+      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
+
+    setMounted(true);
   }, []);
 
   const action = React.useCallback(() => {
@@ -36,10 +39,12 @@ export const Layout = (props: LayoutProps) => {
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
 
+  
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <ContentContainer direction={'column'}>
+      {/** visibility hack prevents ssr flash for mismatched dark mode */}
+      <ContentContainer direction={'column'} style={{ visibility: !mounted ? 'hidden' : 'visible' }}>
         <Navbar darkMode={darkMode} action={action} />
         <PageContainer>{children}</PageContainer>
         <Footer />

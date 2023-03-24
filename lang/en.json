@@ -6,5 +6,6 @@
   "page.home.navbar.about": "About",
   "page.daily.chart.temperature": "Temperature",
   "page.daily.chart.rain": "Precipitation",
+  "page.daily.chart.rain.units": "Precip./hr",
   "page.daily.chart.accum": "Accumulated (resets at midnight)"
 }
