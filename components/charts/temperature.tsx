@@ -3,7 +3,7 @@ import { GraphCard } from '../graphcard';
 import { LineChart } from './linechart';
 import { useIntl } from 'react-intl';
 import { ChartProps } from '../../models';
-import { createChartOptions } from '../../utils/createChartOptions';
+import { createLineChartOptions } from '../../utils/createLineChartOptions';
 import { ChartData } from 'chart.js';
 
 export const TemperatureChart = (props: ChartProps) => {
@@ -29,9 +29,7 @@ export const TemperatureChart = (props: ChartProps) => {
     };
   }, [data]);
 
-  const chartOptions = React.useMemo(() => {
-    return createChartOptions(temperatureTitle, '°C');
-  }, [temperatureTitle]);
+  const chartOptions = createLineChartOptions(temperatureTitle, '°C');
 
   const graphData: ChartData<'line'> = { labels, datasets: [tempData, tempWindData] };
 
