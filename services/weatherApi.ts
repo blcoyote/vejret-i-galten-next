@@ -1,5 +1,5 @@
 import { api } from './api';
-import { WeatherRecord } from '../models/WeatherRecord';
+import { WeatherRecord } from '../models/WeatherRecord.model';
 
 // Define a service using a base URL and expected endpoints
 const weatherApi = api.injectEndpoints({

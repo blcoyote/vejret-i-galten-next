@@ -1,6 +1,6 @@
-import { WeatherRecord } from './WeatherRecord';
+import { WeatherRecord } from './WeatherRecord.model';
 
-export default interface ChartProps {
+export interface ChartProps {
   labels?: string[];
   data?: WeatherRecord[];
   isLoading?: boolean;

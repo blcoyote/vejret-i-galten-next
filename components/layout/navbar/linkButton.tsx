@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Button from './button';
-import LinkProps from './linkProps.interface';
+import { LinkProps } from '../../../models';
 
 export function LinkButton(props: LinkProps) {
   const { action, href, children } = { ...props };

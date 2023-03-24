@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getWeather } from '../../../../utils/db/firestoreIO';
 import { WeatherPeriod } from '../../../../types';
-import { WeatherRecord } from '../../../../models/WeatherRecord';
+import { WeatherRecord } from '../../../../models/WeatherRecord.model';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<WeatherRecord[] | { error: string }>) {
   if (req.method !== 'GET') {

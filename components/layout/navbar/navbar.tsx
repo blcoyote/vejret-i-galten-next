@@ -131,7 +131,7 @@ export const Navbar = (props: NavbarProps) => {
               {about}
             </LinkButton>
           </Box>
-          <ThemeSwitch checked={props.darkMode} onClick={props.action} />
+          <ThemeSwitch checked={props.darkMode} onClick={props.action} data-testid={'navbar-theme-switcher'} />
         </Toolbar>
       </Container>
     </AppBar>

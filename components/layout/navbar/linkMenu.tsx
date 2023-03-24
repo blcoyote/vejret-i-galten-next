@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { MenuItem, Typography } from '@mui/material';
-import LinkProps from './linkProps.interface';
+import LinkProps from '../../../models/linkProps.model';
 
 export function LinkMenu(props: LinkProps) {
   const { action, href, children } = { ...props };

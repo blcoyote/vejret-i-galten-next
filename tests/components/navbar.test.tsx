@@ -45,6 +45,8 @@ describe('Navbar, standard', () => {
     buttons.forEach((button) => {
       expect(button).toBeVisible();
     });
+
+    expect(screen.queryByTestId('navbar-theme-switcher')).toBeVisible();
   });
 
   describe('Navbar, mobile', () => {
@@ -75,6 +77,9 @@ describe('Navbar, standard', () => {
       act(() => {
         menuButton.click();
       });
+
+      const themeSwitcher = screen.getByTestId('navbar-theme-switcher');
+      expect(themeSwitcher).toBeVisible();
     });
   });
 });

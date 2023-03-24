@@ -16,7 +16,7 @@ export const GraphCard = (props: GraphCardProps) => {
   return (
     <Card>
       {title && <GraphCardHeader line1={title} />}
-      {isLoading && <LinearProgress />}
+      {isLoading && <LinearProgress data-testid={'card-progress-bar'} />}
       <CardContent>{children}</CardContent>
     </Card>
   );
