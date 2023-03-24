@@ -36,9 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]} defaultLocale={'da'}>
       <Provider store={store}>
-        {/**<Layout>**/}
-        <Component {...pageProps} dir={getDirection(lang)} />
-        {/**</Layout>**/}
+        <Layout>
+          <Component {...pageProps} dir={getDirection(lang)} />
+        </Layout>
         <Analytics />
       </Provider>
     </IntlProvider>
