@@ -6,5 +6,6 @@
   "page.home.navbar.about": "Om",
   "page.daily.chart.temperature": "Temperatur",
   "page.daily.chart.rain": "Nedbør",
+  "page.daily.chart.rain.units": "Nedbør/time",
   "page.daily.chart.accum": "Akumuleret (nulstiller hver midnat)"
 }

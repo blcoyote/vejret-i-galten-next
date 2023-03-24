@@ -1,9 +1,9 @@
 import React from 'react';
-import { WeatherRecord } from '../../models';
 import { GraphCard } from '../graphcard';
-import { LineChart, options } from './linechart';
+import { LineChart } from './linechart';
 import { useIntl } from 'react-intl';
 import { ChartProps } from '../../models';
+import { createChartOptions } from '../../utils/createChartOptions';
 
 export const TemperatureChart = (props: ChartProps) => {
   const { labels, data, isLoading } = props;
@@ -28,15 +28,15 @@ export const TemperatureChart = (props: ChartProps) => {
     };
   }, [data]);
 
-  const temperatureOptions = React.useMemo(() => {
-    return { ...options, plugins: { title: { display: true, text: temperatureTitle } } };
+  const chartOptions = React.useMemo(() => {
+    return createChartOptions(temperatureTitle, '°C');
   }, [temperatureTitle]);
 
   const graphData = { labels, datasets: [tempData, tempWindData] };
 
   return (
     <GraphCard isLoading={isLoading}>
-      <LineChart options={temperatureOptions} data={graphData} />
+      <LineChart options={chartOptions} data={graphData} />
     </GraphCard>
   );
 };

@@ -9,37 +9,9 @@ import {
   Tooltip,
   Legend,
   ChartOptions,
+  RadialLinearScale,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-
-export const options: ChartOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  elements: {
-    point: {
-      radius: 1,
-      borderWidth: 0,
-      hoverRadius: 10,
-      hoverBorderWidth: 1,
-    },
-    line: {
-      borderWidth: 2,
-      tension: 0.4,
-    },
-  },
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Replace this',
-    },
-    decimation: {
-      enabled: true,
-    },
-  },
-};
 
 interface LineChartProps {
   options?: ChartOptions;
@@ -55,11 +27,11 @@ interface LineChartProps {
 }
 
 export const LineChart = (props: LineChartProps) => {
-  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+  ChartJS.register(CategoryScale, LinearScale, RadialLinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
   return (
     <Box sx={{ position: 'relative', margin: 'auto', width: 'auto', height: { md: '25rem', xs: '15rem' } }}>
-      <Line {...props} data-testid={'linechart'} />
+      <Line {...props} data-testid={'linechart'} />{' '}
     </Box>
   );
 };
