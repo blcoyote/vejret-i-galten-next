@@ -1,13 +1,27 @@
 import { api } from './api';
-import type { WeatherObservation } from '../models/WeatherObservation';
+import { WeatherRecord } from '../models/WeatherRecord.model';
 
 // Define a service using a base URL and expected endpoints
 const weatherApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getCurrentWeather: build.query<WeatherObservation, {}>({
+    getCurrentWeather: build.query<WeatherRecord, {}>({
       query: (arg) => {
         return {
           url: `v1/weather/current`,
+        };
+      },
+    }),
+    getDailyWeather: build.query<WeatherRecord[], {}>({
+      query: (arg) => {
+        return {
+          url: `v1/weather/day`,
+        };
+      },
+    }),
+    getWeeklyWeather: build.query<WeatherRecord[], {}>({
+      query: (arg) => {
+        return {
+          url: `v1/weather/week`,
         };
       },
     }),
@@ -17,4 +31,4 @@ const weatherApi = api.injectEndpoints({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetCurrentWeatherQuery } = weatherApi;
+export const { useGetCurrentWeatherQuery, useGetDailyWeatherQuery, useGetWeeklyWeatherQuery,  } = weatherApi;

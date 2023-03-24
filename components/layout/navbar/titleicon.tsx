@@ -4,6 +4,7 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import { Box } from '@mui/material';
 import SunCalc from 'suncalc';
 import { SvgIconProps } from '@mui/material/SvgIcon';
+import React from 'react';
 
 interface TitleIconProps extends SvgIconProps {}
 
@@ -38,7 +39,7 @@ const CurrentIcon = (props: TitleIconProps) => {
           flexDirection: 'column',
           justifyContent: 'Center',
           alignItems: 'Center',
-          paddingRight: '10px',
+
         }}
       >
         <CloudIcon fontSize='medium' sx={{ mt: 2, zIndex: 1, ...props.sx }} />

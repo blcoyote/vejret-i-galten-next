@@ -8,12 +8,14 @@ import { waitFor } from '@testing-library/dom';
 import { Wrapper } from '../wrapper';
 
 let container;
+let globalWidth = 0;
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());
 beforeEach(() => {
   container = document.createElement('div');
   document.body.appendChild(container);
+  globalWidth = global.innerWidth;
 });
 // Reset any request handlers that we may add during the tests,
 // so they don't affect other tests.
@@ -21,6 +23,7 @@ afterEach(() => {
   server.resetHandlers();
   document.body.removeChild(container);
   container = document.createElement('div');
+  global.innerWidth = globalWidth;
 });
 
 afterAll(() => server.close());
@@ -38,10 +41,12 @@ describe('Navbar, standard', () => {
     });
     // test fullsize navbar
     const buttons = await screen.findAllByTestId('appbar-button');
-    expect(buttons.length).toBe(3);
+    expect(buttons.length).toBe(4);
     buttons.forEach((button) => {
       expect(button).toBeVisible();
     });
+
+    expect(screen.queryByTestId('navbar-theme-switcher')).toBeVisible();
   });
 
   describe('Navbar, mobile', () => {
@@ -55,9 +60,8 @@ describe('Navbar, standard', () => {
           );
         });
       });
-
-      // resize to mobile size
-      render.innerWidth = 400;
+      // test mobile navbar
+      global.innerWidth = 400;
 
       const menuButton = await screen.findByTestId('mobile-appbar-menu-button');
 
@@ -67,13 +71,15 @@ describe('Navbar, standard', () => {
 
       const menuButtons = screen.getAllByTestId('mobile-appbar-menu-item');
       menuButtons.forEach((button) => {
-        expect(button).toHaveTextContent(/Hjem|Historik|Om/i);
+        expect(button).toHaveTextContent(/Hjem|24 timer|7 dage|Om/i);
       });
 
       act(() => {
         menuButton.click();
       });
 
+      const themeSwitcher = screen.getByTestId('navbar-theme-switcher');
+      expect(themeSwitcher).toBeVisible();
     });
   });
 });
