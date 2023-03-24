@@ -12,6 +12,7 @@ import en from '../lang/en.json';
 import da from '../lang/da.json';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const messages = {
   da,
@@ -33,13 +34,26 @@ export default function App({ Component, pageProps }: AppProps) {
     lang = locale;
   }
 
+  function fallbackRender({ error, resetErrorBoundary }) {
+    // Call resetErrorBoundary() to reset the error boundary and retry the render.
+
+    return (
+      <div role='alert'>
+        <p>Something went wrong:</p>
+        <pre style={{ color: 'red' }}>{error.message}</pre>
+      </div>
+    );
+  }
+
   return (
     <IntlProvider locale={lang} messages={messages[lang as keyof typeof messages]} defaultLocale={'da'}>
       <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} dir={getDirection(lang)} />
-        </Layout>
-        <Analytics />
+        <ErrorBoundary fallbackRender={fallbackRender}>
+          <Layout>
+            <Component {...pageProps} dir={getDirection(lang)} />
+          </Layout>
+          <Analytics />
+        </ErrorBoundary>
       </Provider>
     </IntlProvider>
   );
