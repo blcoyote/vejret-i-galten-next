@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 
 export const Home = () => {
   const { data, isLoading, isFetching, error, isError, refetch } = useGetCurrentWeatherQuery({});
-  return <Grid container></Grid>;
+  return <>This is some test text</>;
 };
 
 export default Home;
