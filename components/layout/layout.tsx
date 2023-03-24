@@ -36,9 +36,9 @@ export const Layout = (props: LayoutProps) => {
     localStorage.setItem('darkMode', (!darkMode).toString());
   }, [darkMode]);
 
-  if (!appInitialised) {
-    return <></>;
-  }
+  // if (!appInitialised) {
+  //   return <></>;
+  // }
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
