@@ -1,8 +1,9 @@
 import React from 'react';
 import { useGetDailyWeatherQuery } from '../services/weatherApi';
 import { format } from 'date-fns';
-import { DailyTemperature } from '../components/charts/daily/temperature';
+import { TemperatureChart } from '../components/charts/temperature';
 import { Grid } from '@mui/material';
+import { RainChart } from '../components/charts/rain';
 
 export const Daily = () => {
   const { data, isLoading, isFetching, error, isError, refetch } = useGetDailyWeatherQuery({});
@@ -17,7 +18,10 @@ export const Daily = () => {
   return (
     <Grid container>
       <Grid item xs={gridsizeMobile} md={gridsizeDesktop}>
-        <DailyTemperature labels={labels} data={data} isLoading={isLoading} />
+        <TemperatureChart labels={labels} data={data} isLoading={isLoading} />
+      </Grid>
+      <Grid item xs={gridsizeMobile} md={gridsizeDesktop}>
+        <RainChart labels={labels} data={data} isLoading={isLoading} />
       </Grid>
     </Grid>
   );

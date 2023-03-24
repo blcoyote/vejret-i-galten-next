@@ -1,16 +1,11 @@
 import React from 'react';
-import { WeatherRecord } from '../../../models';
-import { GraphCard } from '../../graphcard';
-import { LineChart, options } from '../linechart';
+import { WeatherRecord } from '../../models';
+import { GraphCard } from '../graphcard';
+import { LineChart, options } from './linechart';
 import { useIntl } from 'react-intl';
+import ChartProps from '../../models/chartProps.model';
 
-interface DailyTemperatureProps {
-  labels?: string[];
-  data?: WeatherRecord[];
-  isLoading?: boolean;
-}
-
-export const DailyTemperature = (props: DailyTemperatureProps) => {
+export const TemperatureChart = (props: ChartProps) => {
   const { labels, data, isLoading } = props;
   const intl = useIntl();
   const temperatureTitle = intl.formatMessage({ id: 'page.daily.chart.temperature' });
@@ -18,7 +13,7 @@ export const DailyTemperature = (props: DailyTemperatureProps) => {
   const tempData = React.useMemo(() => {
     return {
       label: temperatureTitle,
-      data: data?.filter((x) => x.tempf).map((x) => Math.round((((x.tempf - 32) * 5) / 9) * 10) / 10),
+      data: data?.filter((x) => x).map((x) => Math.round((((x.tempf - 32) * 5) / 9) * 10) / 10),
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     };
@@ -27,7 +22,7 @@ export const DailyTemperature = (props: DailyTemperatureProps) => {
   const tempWindData = React.useMemo(() => {
     return {
       label: 'Windchill',
-      data: data?.filter((x) => x.windchillf).map((x) => Math.round((((x.windchillf - 32) * 5) / 9) * 10) / 10),
+      data: data?.filter((x) => x).map((x) => Math.round((((x.windchillf - 32) * 5) / 9) * 10) / 10),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     };
