@@ -59,7 +59,7 @@ export const LineChart = (props: LineChartProps) => {
 
   return (
     <Box sx={{ position: 'relative', margin: 'auto', width: 'auto', height: { md: '25rem', xs: '15rem' } }}>
-      <Line {...props} />
+      <Line {...props} data-testid={'linechart'} />
     </Box>
   );
 };
