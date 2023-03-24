@@ -14,6 +14,7 @@ import { Line } from 'react-chartjs-2';
 
 export const options: ChartOptions = {
   responsive: true,
+  maintainAspectRatio: false,
   elements: {
     point: {
       radius: 1,
@@ -57,7 +58,7 @@ export const LineChart = (props: LineChartProps) => {
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
   return (
-    <Box sx={{ position: 'relative', margin: 'auto', width: 'auto' }}>
+    <Box sx={{ position: 'relative', margin: 'auto', width: 'auto', height: { md: '25rem', xs: '15rem' } }}>
       <Line {...props} />
     </Box>
   );
