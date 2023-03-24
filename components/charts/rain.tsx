@@ -2,7 +2,7 @@ import React from 'react';
 import { GraphCard } from '../graphcard';
 import { LineChart, options } from './linechart';
 import { useIntl } from 'react-intl';
-import ChartProps from '../../models/chartProps.model';
+import { ChartProps } from '../../models';
 
 export const RainChart = (props: ChartProps) => {
   const { labels, data, isLoading } = props;
