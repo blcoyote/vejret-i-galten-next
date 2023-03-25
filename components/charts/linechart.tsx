@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import {
   Chart as ChartJS,
   LinearScale,
+  CategoryScale,
   PointElement,
   LineElement,
   Title,
@@ -18,7 +19,7 @@ interface LineChartProps {
 }
 
 export const LineChart = (props: LineChartProps) => {
-  ChartJS.register(LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+  ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
   return (
     <Box sx={{ position: 'relative', margin: 'auto', width: 'auto', height: { md: '25rem', xs: '15rem' } }}>
