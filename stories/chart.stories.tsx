@@ -16,7 +16,7 @@ export default {
 } as ComponentMeta<typeof TemperatureChart>;
 
 const Template: ComponentStory<typeof TemperatureChart> = (args) => <TemperatureChart {...args} />;
-const labels = weatherData.filter((x) => x.tempf).map((x) => format(new Date(x.tempf * 1000), 'HH:mm'));
+const labels = weatherData.filter((x) => x.dateepoch).map((x) => format(new Date(x.dateepoch * 1000), 'HH:mm'));
 
 export const Temperature = Template.bind({});
 
