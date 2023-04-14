@@ -89,9 +89,6 @@ export const Navbar = (props: NavbarProps) => {
               <LinkMenu href='/daily' action={handleCloseNavMenu} key={'daily'}>
                 {daily}
               </LinkMenu>
-              <LinkMenu href='/weekly' action={handleCloseNavMenu} key={'weekly'}>
-                {weekly}
-              </LinkMenu>
               <LinkMenu href='/about' action={handleCloseNavMenu} key={'about'}>
                 {about}
               </LinkMenu>
@@ -123,9 +120,6 @@ export const Navbar = (props: NavbarProps) => {
             </LinkButton>
             <LinkButton href='/daily' action={handleCloseNavMenu} key={'daily'}>
               {daily}
-            </LinkButton>
-            <LinkButton href='/weekly' action={handleCloseNavMenu} key={'weekly'}>
-              {weekly}
             </LinkButton>
             <LinkButton href='/about' action={handleCloseNavMenu} key={'about'}>
               {about}
