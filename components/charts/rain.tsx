@@ -3,7 +3,7 @@ import { GraphCard } from '../graphcard';
 import { LineChart } from './linechart';
 import { useIntl } from 'react-intl';
 import { ChartProps } from '../../models';
-import { createChartOptions } from '../../utils/createChartOptions';
+import { createLineChartOptions } from '../../utils/createLineChartOptions';
 import { ChartData } from 'chart.js';
 
 export const RainChart = (props: ChartProps) => {
@@ -31,9 +31,7 @@ export const RainChart = (props: ChartProps) => {
     };
   }, [data, accum]);
 
-  const chartOptions = React.useMemo(() => {
-    return createChartOptions(title, 'mm');
-  }, [title]);
+  const chartOptions = createLineChartOptions(title, 'mm');
 
   const graphData: ChartData<'line'> = { labels, datasets: [rainData, dailyRainData] };
 
