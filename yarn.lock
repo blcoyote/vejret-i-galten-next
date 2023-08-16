@@ -9627,7 +9627,7 @@ jest-each@^29.6.2:
     jest-util "^29.6.2"
     pretty-format "^29.6.2"
 
-jest-environment-jsdom@^29.5.0:
+jest-environment-jsdom@^29.6.2:
   version "29.6.2"
   resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-29.6.2.tgz#4fc68836a7774a771819a2f980cb47af3b1629da"
   integrity sha512-7oa/+266AAEgkzae8i1awNEfTfjwawWKLpiw2XesZmaoVVj9u9t8JOYx18cG29rbPNtkUlZ8V4b5Jb36y/VxoQ==
@@ -9898,7 +9898,7 @@ jest-worker@^29.6.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^29.5.0:
+jest@^29.6.2:
   version "29.6.2"
   resolved "https://registry.yarnpkg.com/jest/-/jest-29.6.2.tgz#3bd55b9fd46a161b2edbdf5f1d1bd0d1eab76c42"
   integrity sha512-8eQg2mqFbaP7CwfsTpCxQ+sHzw1WuNWL5UUvjnWP4hx2riGz9fPSzYOaU5q8/GqWn1TfgZIVTqYJygbGbWAANg==
@@ -10887,7 +10887,7 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next@^13.2.4:
+next@^13.4.16:
   version "13.4.16"
   resolved "https://registry.yarnpkg.com/next/-/next-13.4.16.tgz#327ef6885b22161ed001cd5943c20b5e409a9406"
   integrity sha512-1xaA/5DrfpPu0eV31Iro7JfPeqO8uxQWb1zYNTe+KDKdzqkAGapLcDYHMLNKXKB7lHjZ7LfKUOf9dyuzcibrhA==
