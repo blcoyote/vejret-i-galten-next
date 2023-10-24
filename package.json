@@ -65,7 +65,7 @@
     "@types/linkify-it": "^3.0.2",
     "@types/node": "18.15.7",
     "@types/react": "18.0.29",
-    "@types/react-dom": "18.0.11",
+    "@types/react-dom": "18.2.14",
     "@types/suncalc": "^1.9.0",
     "babel-loader": "^9.1.2",
     "cypress": "^13.3.2",
