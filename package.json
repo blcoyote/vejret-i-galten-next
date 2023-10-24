@@ -28,7 +28,7 @@
     "@mui/styled-engine-sc": "^5.11.11",
     "@reduxjs/toolkit": "^1.9.3",
     "@vercel/analytics": "^0.1.11",
-    "chart.js": "^4.2.1",
+    "chart.js": "^4.4.0",
     "date-fns": "^2.29.3",
     "dotenv": "^16.0.3",
     "firebase": "^10.1.0",
