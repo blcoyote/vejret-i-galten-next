@@ -60,7 +60,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/babel__core": "^7.20.0",
     "@types/babel__generator": "^7.6.4",
-    "@types/chart.js": "^2.9.37",
+    "@types/chart.js": "^2.9.39",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/linkify-it": "^3.0.2",
     "@types/node": "18.15.7",

@@ -4687,10 +4687,10 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/chart.js@^2.9.37":
-  version "2.9.37"
-  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.37.tgz#8af70862b154fedf938b5b87debdb3a70f6e3208"
-  integrity sha512-9bosRfHhkXxKYfrw94EmyDQcdjMaQPkU1fH2tDxu8DWXxf1mjzWQAV4laJF51ZbC2ycYwNDvIm1rGez8Bug0vg==
+"@types/chart.js@^2.9.39":
+  version "2.9.39"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.39.tgz#b0487b82a85ff1874afd871e6e027bc44e61939a"
+  integrity sha512-FAsZ6v8ds40mVCgM44T1/ZDKuT1Lh6/a2D3nD8ZNX9SqBObBc0vH2VrcLjYP3PL8onPPt9rIw+QyEkgrzj31TQ==
   dependencies:
     moment "^2.10.2"
 
