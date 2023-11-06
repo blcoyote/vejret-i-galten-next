@@ -54,7 +54,7 @@
     "@storybook/addon-links": "^7.2.3",
     "@storybook/builder-webpack5": "^7.2.3",
     "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^7.5.2",
+    "@storybook/react": "^7.5.3",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
