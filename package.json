@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.14",
+    "@mui/material": "^5.14.20",
     "@mui/styled-engine-sc": "^5.14.12",
     "@reduxjs/toolkit": "^1.9.3",
     "@vercel/analytics": "^1.1.1",
