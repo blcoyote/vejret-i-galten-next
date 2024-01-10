@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.23.3",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
@@ -58,7 +58,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
-    "@types/babel__core": "^7.20.0",
+    "@types/babel__core": "^7.20.5",
     "@types/babel__generator": "^7.6.4",
     "@types/chart.js": "^2.9.37",
     "@types/jsonwebtoken": "^9.0.1",
