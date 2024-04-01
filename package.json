@@ -22,7 +22,7 @@
     "@babel/core": "^7.24.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/roboto": "^5.0.12",
     "@mui/material": "^5.15.2",
     "@mui/icons-material": "^5.15.2",
     "@mui/styled-engine-sc": "^5.14.12",
